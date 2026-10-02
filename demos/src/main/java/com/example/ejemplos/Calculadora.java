@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Random;
+import java.util.concurrent.locks.LockSupport;
 import java.util.function.BooleanSupplier;
 
 public class Calculadora {
@@ -18,21 +20,11 @@ public class Calculadora {
 		return roundIEEE754(a / b);
 	}
 	public int divide(int a, int b) {
-//		try {
-//			Thread.sleep(10);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		LockSupport.parkNanos((new Random()).nextInt(5, 15) * 10_000_000);
 		return a / b;
 	}
 	public int lento(int a, int b) {
-//		try {
-//			Thread.sleep(10000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		LockSupport.parkNanos(1_000_000_000);
 		return a / b;
 	}
 	

@@ -152,7 +152,7 @@ class CalculadoraTest {
 			var actual = assertTimeout(Duration.ofMillis(90), () -> fixure.divide(1, 2));
 
 			assertEquals(0, actual);
-		        assertEquals(5, repetitionInfo.getTotalRepetitions());
+		    assertEquals(5, repetitionInfo.getTotalRepetitions());
 		}
 
 		@Nested
